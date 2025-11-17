@@ -22,5 +22,10 @@ public class HomeController {
 		return "Hello, Welcome to this new page!";
 	}
 	
+	@RequestMapping("/original")
+	public @ResponseBody String original() {
+		return "Hello, This is the change I made in the original project!";
+	}
+	
 
 }
