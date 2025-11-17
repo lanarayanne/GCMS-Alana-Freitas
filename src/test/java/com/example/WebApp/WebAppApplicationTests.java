@@ -36,6 +36,18 @@ class WebAppApplicationTests {
 		
 	}
 	
+	@Test
+	public void shouldReturnGreetingAlana() throws Exception {
+		this.mockMvc.perform(get("/alana")).andDo(print()).andExpect(status().isOk()).andExpect(content().string(containsString("Hello, Alana!?!?")));
+		
+	}
+	
+	@Test
+	public void shouldReturnHotfix() throws Exception {
+		this.mockMvc.perform(get("/hotfix")).andDo(print()).andExpect(status().isOk()).andExpect(content().string(containsString("Hotfix")));
+		
+	}
+	
 	/*
 	@Test
 	public void shouldReturnWrongMessage() throws Exception {

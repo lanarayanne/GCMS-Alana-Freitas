@@ -31,5 +31,11 @@ public class HomeController {
 		return "Hello, This is the change I made in the original project!";
 	}
 	
+	@RequestMapping("/alana")
+	 public @ResponseBody String greetingAlana() {
+	 return "Hello, Alana!?!?";
+	 }
+
+	
 
 }
