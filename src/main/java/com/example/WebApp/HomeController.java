@@ -21,6 +21,10 @@ public class HomeController {
 	public @ResponseBody String newPage() {
 		return "Hello, Welcome to this new page!";
 	}
+	@RequestMapping("/change-in-copy")
+	public @ResponseBody String copied() {
+		return "Hello, These are the changes I made in the copied project!";
+	}
 	
 
 }
