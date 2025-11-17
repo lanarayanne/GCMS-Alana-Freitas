@@ -21,6 +21,10 @@ public class HomeController {
 	public @ResponseBody String newPage() {
 		return "Hello, Welcome to this new page!";
 	}
+	@RequestMapping("/copy")
+	public @ResponseBody String copy() {
+		return "Hello, this is the change in the copy page";
+	}
 	
 	@RequestMapping("/original")
 	public @ResponseBody String original() {
