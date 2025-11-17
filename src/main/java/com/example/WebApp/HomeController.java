@@ -17,5 +17,10 @@ public class HomeController {
 		return "Hello, Lana!";
 	}
 	
+	@RequestMapping("/new")
+	public @ResponseBody String newPage() {
+		return "Hello, Welcome to this new page!";
+	}
+	
 
 }

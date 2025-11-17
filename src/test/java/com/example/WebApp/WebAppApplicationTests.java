@@ -30,6 +30,12 @@ class WebAppApplicationTests {
 		
 	}
 	
+	@Test
+	public void shouldReturnNewPage() throws Exception {
+		this.mockMvc.perform(get("/new")).andDo(print()).andExpect(status().isOk()).andExpect(content().string(containsString("Hello, Welcome to this new page!")));
+		
+	}
+	
 	/*
 	@Test
 	public void shouldReturnWrongMessage() throws Exception {
