@@ -36,6 +36,12 @@ class WebAppApplicationTests {
 		
 	}
 	
+	@Test
+	public void shouldReturnMain() throws Exception {
+		this.mockMvc.perform(get("/main")).andDo(print()).andExpect(status().isOk()).andExpect(content().string(containsString("Hello, Main!")));
+		
+	}
+	
 	/*
 	@Test
 	public void shouldReturnWrongMessage() throws Exception {
