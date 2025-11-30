@@ -20,39 +20,75 @@ class WebAppApplicationTests {
 
 	@Test
 	public void shouldReturnDefaultMessage() throws Exception {
-		this.mockMvc.perform(get("/")).andDo(print()).andExpect(status().isOk()).andExpect(content().string(containsString("Hello, World!")));
+		this.mockMvc.perform(get("/"))
+		.andDo(print()).andExpect(status().isOk())
+		.andExpect(content()
+				.string(containsString("Hello, World!")));
 		
 	}
 	
 	@Test
 	public void shouldReturnPersonalMessage() throws Exception {
-		this.mockMvc.perform(get("/lana")).andDo(print()).andExpect(status().isOk()).andExpect(content().string(containsString("Hello, Lana!")));
+		this.mockMvc.perform(get("/lana"))
+		.andDo(print()).andExpect(status().isOk())
+		.andExpect(content()
+				.string(containsString("Hello, Lana!")));
 		
 	}
 	
 	@Test
 	public void shouldReturnNewPage() throws Exception {
-		this.mockMvc.perform(get("/new")).andDo(print()).andExpect(status().isOk()).andExpect(content().string(containsString("Hello, Welcome to this new page!")));
+		this.mockMvc.perform(get("/new"))
+		.andDo(print()).andExpect(status().isOk())
+		.andExpect(content()
+				.string(containsString("Hello, Welcome to this new page!")));
 		
 	}
 	
 	@Test
+	public void shouldReturnCopyPage() throws Exception {
+		this.mockMvc.perform(get("/copy"))
+		.andDo(print()).andExpect(status().isOk())
+		.andExpect(content()
+				.string(containsString("Hello, this is the change in the copy page")));
+		
+	}
+	
+	@Test
+	public void shouldReturnOriginalPage() throws Exception {
+		this.mockMvc.perform(get("/original"))
+		.andDo(print()).andExpect(status().isOk())
+		.andExpect(content()
+				.string(containsString("Hello, This is the change I made in the original project!")));
+		
+	}
+	
+	
+	@Test
 	public void shouldReturnMain() throws Exception {
-		this.mockMvc.perform(get("/main")).andDo(print()).andExpect(status().isOk()).andExpect(content().string(containsString("Hello, Main!")));
+		this.mockMvc.perform(get("/main"))
+		.andDo(print()).andExpect(status().isOk())
+		.andExpect(content()
+				.string(containsString("Hello, Main!")));
+	}
+	
+	@Test
+	public void shouldReturnGreetingAlana() throws Exception {
+		this.mockMvc.perform(get("/alana"))
+		.andDo(print()).andExpect(status().isOk())
+		.andExpect(content()
+				.string(containsString("Hello, Alana!?!?")));
+		
 	}
 	
 	@Test
 	public void shouldReturnHotfix() throws Exception {
-		this.mockMvc.perform(get("/hotfix")).andDo(print()).andExpect(status().isOk()).andExpect(content().string(containsString("Hotfix")));
+		this.mockMvc.perform(get("/hotfix"))
+		.andDo(print()).andExpect(status().isOk())
+		.andExpect(content()
+				.string(containsString("Hotfix")));
 		
 	}
 	
-	/*
-	@Test
-	public void shouldReturnWrongMessage() throws Exception {
-		this.mockMvc.perform(get("/wrongTest")).andDo(print()).andExpect(status().isOk()).andExpect(content().string(containsString("Hello, Wrong!")));
-		
-	}
-	*/
 
 }
