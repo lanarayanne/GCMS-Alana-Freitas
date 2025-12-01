@@ -15,8 +15,11 @@ on:
 
 jobs:
   build:
-
+  
     runs-on: ubuntu-latest
+    container:
+      image: docker://lanarayanne/gcms:webapp
+
     permissions:
       contents: read
 
